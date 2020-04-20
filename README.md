@@ -5,26 +5,12 @@
 
 ### To Run
 
-- Terminal (go to directory): `cd ~/Library/LaunchAgents/`
-- Terminal (create/open file): `nano com.<unique-name>.osx.test.plist`
-- Nano Editor (add commands):
+- Terminal: `cd ~/<project_root_path>`
+- Terminal: `chmod +x <project_filename>.py`
+- Terminal: `nohup <project_filename>.py > output.log &`
 
-```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
-  <plist version="1.0">
-    <dict>
-      <key>Label</key>
-      <string>com.<unique-name>.osx.test</string>
-      <key>Program</key>
-      <string>/<project-location>/<project-filename>.py</string>
-      <key>KeepAlive</key>
-      <true/>
-    </dict>
-  </plist>
-```
+### To Stop
 
-- Nano Editor (end editing): `ctl + x`
-- Nano Editor (confirm save): `y`
-- Terminal (start process): `launchctl load ~/Library/LaunchAgents/com.bobbob.osx.test.plist`
-- Terminal (stop process): `launchctl unload ~/Library/LaunchAgents/com.bobbob.osx.test.plist`
+- Terminal: `cd ~/<project_root_path>`
+- Terminal: `ps ax | grep <project_filename>.py`
+- Terminal: `kill <PID>`

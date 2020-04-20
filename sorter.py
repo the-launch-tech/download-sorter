@@ -1,11 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 import os, time, shutil
 
+times = 1
 code_list = ['py', 'js', 'php', 'html', 'css', 'scss', 'ts', 'json', 'md']
 media_list = ['png', 'jpg', 'svg', 'gif', 'm4a', 'mov', 'psd', 'eps', 'ai']
 ext_list = ('docx', 'pkg', 'pptx', 'csv', 'xml', 'xls', 'txt', 'word', 'zip', 'wpress', 'directory', 'unknown', 'code', 'media')
 
-src_dir = "./example-source"
+src_dir = "/Users/danielgriffiths/Downloads"
 category_dirs = dict([(ext, f"{src_dir}/{ext}-archive") for ext in ext_list])
 
 def get_category_path(ext) :
@@ -30,6 +32,7 @@ def make_if_not_exists(category_path) :
         os.makedirs(category_path)
 
 while True:
+    print(f'RUNNING {times} TIMES')
     for file in os.listdir(src_dir) :
         if file not in [f"{ext}-archive" for ext in ext_list] :
             name, ext = os.path.splitext(file)
@@ -37,3 +40,4 @@ while True:
             make_if_not_exists(category_path)
             move_object(object=file, destination_path=category_path)
     time.sleep(10)
+    times += 1
