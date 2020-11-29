@@ -7,7 +7,7 @@
 
 - Terminal: `cd ~/<project_root_path>`
 - Terminal: `chmod +x <project_filename>.py`
-- Terminal: `nohup <project_filename>.py > output.log &`
+- Terminal: `nohup python <project_filename>.py > output.log &`
 
 ### To Stop
 

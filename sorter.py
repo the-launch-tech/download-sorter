@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import os, time, shutil
 
 times = 1
